@@ -61,7 +61,7 @@ function App() {
     <div className="App-container">
         <Header onAddOrClose={onAddTaskForm} showAdd={showAddTaskForm}/>
         {showAddTaskForm && <AddTask onSubmitForm={onSubmitTaskForm} />}
-        <Tasks tasks={tasks}  onDeleteTask={onDeleteTask} updateReminder={updateReminder}/>
+        {tasks.length ? <Tasks tasks={tasks}  onDeleteTask={onDeleteTask} updateReminder={updateReminder}/> : <h4>No Tasks Available</h4>}
     </div>
   );
 }
